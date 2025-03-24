@@ -18,7 +18,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // ✅ Use CORS to prevent fetch errors (Customize origins if needed)
 app.use(cors({
-  origin: "http://localhost:5173", // Allow frontend app running on port 5173
+  origin: "http://localhost:5173" // Allow frontend app running on port 5173
 }));
 app.use(express.static("./views"))
 app.use(express.json());
@@ -65,8 +65,8 @@ app.post("/create-checkout-session", async (req, res) => {
         };
       }),
       mode: "payment",
-      success_url: `http://localhost:5173?success=true`,
-      cancel_url: `http://localhost:5173/?canceled=true`,
+      success_url: `https://e-store-1-1.onrender.com/?success=true`,
+      cancel_url: `https://e-store-1-1.onrender.com/?canceled=true`,
     });
 
     res.json({ id: session.id });
