@@ -65,8 +65,8 @@ app.post("/create-checkout-session", async (req, res) => {
         };
       }),
       mode: "payment",
-      success_url: `https://e-store-1-1.onrender.com/?success=true`,
-      cancel_url: `https://e-store-1-1.onrender.com/?canceled=true`,
+      success_url: `https://e-store-1-2.onrender.com/?success=true`,
+      cancel_url: `https://e-store-1-2.onrender.com/?canceled=true`,
     });
 
     res.json({ id: session.id });
